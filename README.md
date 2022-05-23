@@ -26,3 +26,7 @@ https://replit.com/@VishnuReddy17/day-3-start#main.py
 # love calculator
 
 [codingrooms-project (5).zip](https://github.com/Vishnu2571/MyFirstProject/files/8734301/codingrooms-project.5.zip)
+
+# for loop in lists-Excercises
+[codingrooms-project (6).zip](https://github.com/Vishnu2571/MyFirstProject/files/8750744/codingrooms-project.6.zip)
+[codingrooms-project (7).zip](https://github.com/Vishnu2571/MyFirstProject/files/8750745/codingrooms-project.7.zip)
