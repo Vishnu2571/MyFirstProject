@@ -1,0 +1,23 @@
+Generate Document:
+
+given two strings of characters as input, we have to write a function whether the second string can be generated using the first string or not.
+
+if yes output should be true:
+if not output should be false:
+
+to generate the second string using the first one: all the characters in the second one must be present in the first string.
+
+SOLUTION:
+
+we will create a new dictionary to store the count of characters in the first string.
+
+next, we loop through the first string and if we find the character in the new dictionary then we increment the count by 1 to the existing one: and we dont have the character in the new dictionary we will make the count as 1.
+
+this way we get all the counts for all the characters in the first string.
+
+Now, we loop through the second string and check if the characters are present in the new dictionary created :
+to return the function True all the characters must be present and the count of the characters must be greater than zero.
+
+so if any character is not present in the new dictionary, it should return false : also of the count of any character becomes zero, then it should return false,
+In all the other cases, count should be decreased by one till we find all the characters.
+if found then it should return TRUE.
