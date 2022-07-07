@@ -1,0 +1,9 @@
+nums = [1,2,3]
+
+def powerset(nums):
+    res=[[]]
+    for i in range(len(nums)):
+        for j in range(len(res)):
+            x = res[j]
+            res.append(x + [nums[i]])
+    return res
