@@ -1,0 +1,28 @@
+Iput : List of Integers that represesnts a jump value in the array. Return a function that returns a boolean representing whether the jumps in the array form a single cycle.
+
+
+1. have to visit all the elements only once before coming to the starting index.
+2.next index is should be calculated and to moved to the next index.
+3. visied elements to be incremented by 1 after visiting the element
+4.if we reach the starting point before visiting all the elements, then it should return false.
+
+
+
+
+CODE :
+def hasSingleCycle(array):
+    numOfElementsVisisted = 0
+	index = 0
+	
+	while numOfElementsVisisted < len(array):
+		if numOfElementsVisisted > 0 and index == 0:
+			return False
+		numOfElementsVisisted +=1
+		move = index+array[index]
+		moveIndex = move % len(array)
+		if moveIndex >=0:
+			index = moveIndex
+			
+		else:
+			index = moveIndex+len(array)
+	return index == 0		
