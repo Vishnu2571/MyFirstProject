@@ -1,0 +1,58 @@
+
+
+
+
+
+
+
+def graph(array):
+    hashtable ={}
+    for i in array:
+        if i[1] in hashtable:
+            hashtable[i[1]].append(i[0])
+        else:
+            hashtable[i[1]] = [i[0]]     
+    return hashtable
+    
+
+def topologicalSort(jobs, deps):
+    # Write your code here.
+    output = []
+    dict = graph(deps)
+    print(dict)
+    
+    visited = [False for i in range(len(jobs)+1)]
+    stack = [False for i in range(len(jobs)+1)]
+    
+    for job in jobs:
+        if visited[job] == True:
+            continue
+        else:               
+            val = dfs(job,dict,visited,stack,output)
+            if val is False:
+                return []
+    print(output)
+    return output  
+            
+
+def dfs(j,dict,visited,stack,output):
+    visited[j] = True
+    stack[j] = True
+    if j in dict:
+        for prereq in dict[j]:
+            if stack[prereq] == True:
+                return False
+            if visited[prereq] == True:
+                continue
+
+            val = dfs(prereq,dict,visited,stack,output)
+            if val is False:
+                return val
+    stack[j] = False
+    output.append(j)  
+    return True
+            
+            
+            
+        
+            
