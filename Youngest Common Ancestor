@@ -1,0 +1,37 @@
+first we have to find the depths of the descendanths.
+then bring the descendant with the highest depth with the same level as the descendant with the lower depth.
+when both the descendants are at same level, then traverse the descendants till both the values are equal finding their ancestors value.
+return when both the lower and upper descendants are equal.
+
+
+
+class AncestralTree:
+    def __init__(self, name):
+        self.name = name
+        self.ancestor = None
+
+
+def getYoungestCommonAncestor(topAncestor, descendantOne, descendantTwo):
+    # Write your code here.
+    d1 = depth(descendantOne,topAncestor)
+    d2 = depth(descendantTwo,topAncestor)
+    # print(depth(descendantOne,topAncestor))
+    # print(depth(descendantTwo,topAncestor))
+    if d2 > d1:
+        return traverseNode(descendantTwo,descendantOne,d2-d1)
+    return traverseNode(descendantOne,descendantTwo,d1-d2)    
+
+def depth(descendant,topAncestor):
+    dep = 0
+    while descendant != topAncestor:
+        dep +=1
+        descendant = descendant.ancestor
+    return dep
+def traverseNode(lower,upper,diff):
+    while diff > 0:
+        diff -=1
+        lower = lower.ancestor
+    while lower != upper:
+        lower = lower.ancestor
+        upper = upper.ancestor
+    return lower
